@@ -7,11 +7,11 @@ import java.net.URI;
  *
  */
 public class ExceptionHandler {
-	public static void HandleException(Exception e) {
+	public static void handleException(Exception e) {
 		try {
 			java.awt.Desktop.getDesktop().browse(new URI("http://stackoverflow.com/search?q=" + e.getClass().getName()));
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			ExceptionHandler.handleException(e1);
 		}
 	}
 }
